@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-from calculator_1 import add, sub, mul, div
 if __name__ == "__main__":
-    a = 10
-    b = 5
-    print("{} + {} = {}".format(a, b, add(a, b)))
-    print("{} - {} = {}".format(a, b, sub(a, b)))
-    print("{} * {} = {}".format(a, b, mul(a, b)))
-    print("{} / {} = {}".format(a, b, div(a, b)))
+    import sys
+
+    argv = sys.argv[1:]
+    count = len(argv)
+
+    if count == 0:
+        print("0 arguments.")
+    else:
+        print("{} argument{}:".format(count, "" if count == 1 else "s"))
+        for i in range(count):
+            print("{}: {}".format(i + 1, argv[i]))
